@@ -26,4 +26,4 @@ export EDITOR=vim
 #[ -f $RVM_HOME/scripts/rvm ] && source $RVM_HOME/scripts/rvm
 
 # Aliases
-alias ls='ls -lah -color=auto'
+# alias ls='ls -lah'
