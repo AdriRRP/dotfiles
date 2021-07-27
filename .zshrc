@@ -36,3 +36,7 @@ export EDITOR=vim
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 [ -f $NVM_HOME/nvm.sh ] && source $NVM_HOME/nvm.sh
 [ -f $RVM_HOME/scripts/rvm ] && source $RVM_HOME/scripts/rvm
+
+# Plugins
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
