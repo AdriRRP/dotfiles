@@ -30,6 +30,6 @@ endif
 "Plugin section
 
 "Auto complete Plugin
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
