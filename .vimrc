@@ -1,4 +1,5 @@
 syntax on
+filetype plugin indent on
 
 set noerrorbells "Disable error bells
 set tabstop=4 softtabstop=4
