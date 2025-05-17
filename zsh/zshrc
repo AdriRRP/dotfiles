@@ -92,8 +92,3 @@ if [ -d "/opt/homebrew/opt/kleopatra/bin" ]; then export PATH="/opt/homebrew/opt
 # LM Studio CLI (lms)
 if [ -d $HOME/.lmstudio/bin/ ]; then export PATH="$PATH:$HOME/.lmstudio/bin/"; fi
 
-# Fix para Ghostty en Linux: evitar problemas con Tmux si TERM es xterm-ghostty
-if [[ "$OSTYPE" == "linux-gnu"* ]] && [[ "$TERM" == "xterm-ghostty" ]]; then
-  export TERM="xterm-256color"
-fi
-
