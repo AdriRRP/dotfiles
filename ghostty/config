@@ -1,0 +1,14 @@
+# Theme and fort
+theme = dracula
+font-family = JetBrains Mono
+font-size = 18
+background-opacity = 0.80
+
+# Copy to clipboard on select
+copy-on-select = clipboard
+
+# Wide Scroll
+scrollback-limit = 100000
+
+# Super + `+` to increase font size 
+keybind=super+kp_add=increase_font_size:1
