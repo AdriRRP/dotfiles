@@ -2,7 +2,7 @@
 theme = dracula
 font-family = JetBrains Mono
 font-size = 18
-background-opacity = 0.80
+background-opacity = 0.90
 
 # Copy to clipboard on select
 copy-on-select = clipboard
