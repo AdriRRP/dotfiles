@@ -12,5 +12,5 @@ scrollback-limit = 100000
 
 # Super + [ `+`, `-` or `-`] to modify font size 
 keybind = super+kp_add=increase_font_size:1
-keybind = super+kp_subtract=increase_font_size:1
+keybind = super+kp_subtract=decrease_font_size:1
 keybind = super+kp_0=reset_font_size
