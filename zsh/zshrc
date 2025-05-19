@@ -35,8 +35,13 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 bindkey "^[[Z" autosuggest-accept
 
 #### ALIASES
+#
 # Bat as default cat
 [[ -x "$(command -v bat)" ]] && alias cat="bat" || { [[ -x "$(command -v batcat)" ]] && alias cat="batcat" && alias bat="batcat"; }
+
+# Auto-load custom host-specific config
+ZSH_CUSTOM_MACHINE="$ZSH/custom/${USER}-$(hostname -s).zsh"
+[[ -f "$ZSH_CUSTOM_MACHINE" ]] && source "$ZSH_CUSTOM_MACHINE"
 
 #### STARTUP BANNER
 # Displays system and session info on shell startup
