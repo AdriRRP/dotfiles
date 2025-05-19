@@ -92,3 +92,8 @@ if [ -d "/opt/homebrew/opt/kleopatra/bin" ]; then export PATH="/opt/homebrew/opt
 # LM Studio CLI (lms)
 if [ -d $HOME/.lmstudio/bin/ ]; then export PATH="$PATH:$HOME/.lmstudio/bin/"; fi
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/adrianramos/.lmstudio/bin"
+# End of LM Studio CLI section
+
