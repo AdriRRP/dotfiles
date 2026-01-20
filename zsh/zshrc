@@ -37,7 +37,7 @@ bindkey "^[[Z" autosuggest-accept
 #### ALIASES
 #
 # Bat as default cat
-[[ -x "$(command -v bat)" ]] && alias cat="bat" || { [[ -x "$(command -v batcat)" ]] && alias cat="batcat" && alias bat="batcat"; }
+#[[ -x "$(command -v bat)" ]] && alias cat="bat" || { [[ -x "$(command -v batcat)" ]] && alias cat="batcat" && alias bat="batcat"; }
 
 # Auto-load custom host-specific config
 ZSH_CUSTOM_MACHINE="$ZSH/custom/${USER}-$(hostname -s).zsh"
@@ -45,7 +45,24 @@ ZSH_CUSTOM_MACHINE="$ZSH/custom/${USER}-$(hostname -s).zsh"
 
 #### STARTUP BANNER
 # Displays system and session info on shell startup
-ip_local=$(ipconfig getifaddr en0 2>/dev/null || hostname -I | awk '{print $1}')
+ip_local=$(
+  if command -v ipconfig >/dev/null 2>&1; then
+    # macOS: try en0 first; if it has no IP, fall back to the default route interface.
+    ipconfig getifaddr en0 2>/dev/null || {
+      default_iface="$(route get default 2>/dev/null | awk '/interface:/{print $2; exit}')"
+      ipconfig getifaddr "${default_iface:-en0}" 2>/dev/null
+    }
+  elif command -v ip >/dev/null 2>&1; then
+    # Linux: pick the first global IPv4 address from an UP interface (skip loopback).
+    ip -o -4 addr show scope global up 2>/dev/null \
+      | awk '{print $4}' \
+      | cut -d/ -f1 \
+      | head -n1
+  else
+    # Last-resort fallback (may vary by platform).
+    hostname -i 2>/dev/null
+  fi
+)
 ip_public=$(curl -s https://api.ipify.org)
 
 printf "\e[1;32m          .                                                      .\n"
