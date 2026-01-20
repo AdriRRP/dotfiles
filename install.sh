@@ -42,7 +42,7 @@ ln -sf "$DOTFILES_DIR/zsh/p10k.zsh" "$HOME/.p10k.zsh"
 ln -sf "$DOTFILES_DIR/tmux/tmux.conf" "$HOME/.tmux.conf"
 mkdir -p "$HOME/.config/ghostty"
 ln -sf "$DOTFILES_DIR/ghostty/config" "$HOME/.config/ghostty/config"
-ln -sf "$DOTFILES_DIR/vim/vimrc" "$HOME/.vimrc
+ln -sf "$DOTFILES_DIR/vim/vimrc" "$HOME/.vimrc"
 # (We might copy .oh-my-zsh custom config or others if needed)
 
 # 6. Change default shell to zsh
